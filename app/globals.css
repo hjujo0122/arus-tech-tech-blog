@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background: #e6ddf8;
+  --foreground: #2a2236;
+  --accent:     #7a5fa0;
+  --border:     #c0aada;
+  --card-bg:    #f2eefb;
+  --tag-bg:     #cec2f0;
+  --tag-text:   #5a3e7a;
+  --subtext:    #9e8ab8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #191224;
+    --foreground: #ede8f8;
+    --accent:     #c4a8e0;
+    --border:     #3a2850;
+    --card-bg:    #211830;
+    --tag-bg:     #2e1e48;
+    --tag-text:   #d4b8f0;
+    --subtext:    #7860a0;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent:     var(--accent);
+  --color-border:     var(--border);
+  --color-card-bg:    var(--card-bg);
+  --color-tag-bg:     var(--tag-bg);
+  --color-tag-text:   var(--tag-text);
+  --color-subtext:    var(--subtext);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-klee-one), var(--font-geist-sans), Arial, sans-serif;
+}
+
+.prose a {
+  color: var(--accent);
+  text-decoration-color: var(--border);
+}
+.prose a:hover {
+  opacity: 0.75;
+}
+
+.prose h2 {
+  border-left: 3px solid var(--accent);
+  padding-left: 0.75rem;
+}
+
+.prose h3 {
+  color: var(--accent);
+}
+
+.prose :not(pre) > code {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 0.15em 0.45em;
+  border-radius: 0.3em;
+  font-size: 0.875em;
+  font-weight: normal;
+}
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+  content: none;
+}
+
+.prose img {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+.prose pre {
+  background: #271d38 !important;
+  border: 1px solid var(--border);
+  color: #e8e0f8;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose pre {
+    background: #1a1030 !important;
+  }
+}
