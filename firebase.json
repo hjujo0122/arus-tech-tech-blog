@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "arus-tech-tech",
     "public": "out",
     "ignore": [
       "firebase.json",
